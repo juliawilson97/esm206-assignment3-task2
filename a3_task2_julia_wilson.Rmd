@@ -203,7 +203,6 @@ some_dates_converted <- mdy(some_dates)
 some_dates_converted
 
 class(some_dates_converted)
-
 ```
 
 #### 3C. Follow me
@@ -245,10 +244,17 @@ Starting from the `lakers` dataset, create a new dataset called `gasol_hookshots
 - Find the *number* of Gasol's hook shots recorded (not necessarily scored) by **month** (hint: `count(month)`) for the 2008 - 2009 season
 
 ```{r}
-# Your code here: 
+# Your code here:
+gasol_hookshots <- lakers %>% 
+  mutate(Date = ymd(date)) %>% 
+  mutate(month_new = month(Date))
 
-
+hook_shots_month <- gasol_hookshots %>% 
+  filter(player == "Pau Gasol", type == "hook") %>% 
+  group_by(player,type) %>% 
+  count(month_new)
 ```
+
 
 ### 4. `dplyr::case_when()`
 
