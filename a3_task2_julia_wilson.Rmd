@@ -172,7 +172,7 @@ In the code chunk below, use `ymd()` to convert a date that you choose in `YYYY-
 # Your code here: 
 ymd("1997-12-30")
 ymd("1997/12/30")
-ymd("19971230")
+ymd(19971230)
 
 ```
 
