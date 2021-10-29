@@ -253,6 +253,8 @@ gasol_hookshots <- lakers %>%
 gasol_hook_shots_month <- gasol_hookshots %>% 
   group_by(month_new) %>% 
   count(month_new)
+
+gasol_hook_shots_month
 ```
 
 

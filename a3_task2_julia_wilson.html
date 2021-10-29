@@ -380,12 +380,12 @@ points_by_month</code></pre>
 </ul>
 <pre class="r"><code># Your code here:
 gasol_hookshots &lt;- lakers %&gt;% 
-  mutate(Date = ymd(date)) %&gt;% 
-  mutate(month_new = month(Date))
-
-hook_shots_month &lt;- gasol_hookshots %&gt;% 
   filter(player == &quot;Pau Gasol&quot;, type == &quot;hook&quot;) %&gt;% 
-  group_by(player,type) %&gt;% 
+  mutate(date = ymd(date)) %&gt;% 
+  mutate(month_new = month(date))
+
+gasol_hook_shots_month &lt;- gasol_hookshots %&gt;% 
+  group_by(month_new) %&gt;% 
   count(month_new)</code></pre>
 </div>
 </div>
